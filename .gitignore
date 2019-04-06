@@ -1,1 +1,6 @@
-
+**/jsconfig.json
+**/.eslintrc.json
+.vscode
+.sfdx
+metadata
+package.xml
