@@ -1,0 +1,50 @@
+<template>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+	<div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+		<div class="slds-modal__container">
+			<div class="slds-modal__header">
+				<h2 class="slds-text-heading_medium">New Announcement</h2>
+			</div>
+			<div class="slds-modal__content slds-p-around_medium slds-grid slds-wrap">
+				<template if:true={error}>
+						<c-inline-message
+							variant="error"
+							message="Error loading announcement"
+							errors={error}
+						></c-inline-message>
+				</template>
+				<lightning-record-edit-form object-api-name="Announcement__c"
+											onsuccess={handleSuccess}
+											onsubmit={handleSubmit}
+											record-id={announcementid}
+					>
+					<lightning-messages></lightning-messages>
+					<lightning-input-field field-name="Announcement__c">
+					</lightning-input-field>
+					<lightning-input-field field-name="Start_Date__c">
+					</lightning-input-field>
+					<lightning-input-field field-name="End_Date__c">
+					</lightning-input-field>
+					<c-Cmp-Profiles-Dual-List-Box onportfolioselected={portfolioSelectedHandler}
+												  selectedprofiles={selectedProfiles}>
+					</c-Cmp-Profiles-Dual-List-Box>
+					<div class="slds-m-top_medium">
+						<lightning-button
+							class="slds-m-top_small"
+							variant="neutral"
+							label="Cancel"
+							onclick={handelCancel}>
+						</lightning-button>
+						<lightning-button
+							variant="brand"
+							class="slds-m-top_small"
+							type="submit"
+							label="Save">
+						</lightning-button>
+					</div>
+				</lightning-record-edit-form>
+
+			</div>
+		</div>
+	</div>
+</template>

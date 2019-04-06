@@ -1,0 +1,13 @@
+<!--
+ - Created by daini on 19/02/01.
+ -->
+
+<aura:component description="CMP_Overide_Edit_Announcement"
+				controller="CTRL_Announcement"
+				implements="lightning:actionOverride,force:hasRecordId,force:appHostable"
+				access="global">
+		<aura:attribute name="recordId" type="Id"></aura:attribute>		
+		<aura:if isTrue="{! not( empty( v.recordId ) ) }">
+			<c:announcementOverrideCreateNew announcementid="{!v.recordId}"/>
+		</aura:if>
+</aura:component>

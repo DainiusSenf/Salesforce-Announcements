@@ -1,0 +1,19 @@
+<template>
+	<template if:true={error}>
+		<c-inline-message
+			variant="error"
+			message="Error retrieving profiles"
+			errors={error}
+		></c-inline-message>
+	</template>
+	<template if:true={loaded}>
+		<lightning-dual-listbox name="Profiles"
+								label="Select Profiles"
+								source-label="Available"
+								selected-label="Selected"
+								field-level-help="Announcement will be showed only to users with selected profiles"
+								options={profiles}
+								value={selectedprofiles}
+								onchange={handleChange}></lightning-dual-listbox>
+	</template>
+</template>

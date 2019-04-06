@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Announcement" icon-name="action:announcement">
+		<template if:true={error}>
+			<c-inline-message
+				variant="error"
+				message="Error retrieving profiles"
+				errors={error}
+			></c-inline-message>
+		</template>
+        <template if:true={loaded}>
+			<template if:true={announcement}>
+				<div class="slds-p-around_x-small">
+					<lightning-formatted-rich-text class="slds-text-longform" value={announcement}></lightning-formatted-rich-text>
+				</div>
+			</template>
+			<template if:false={announcement}>
+				<div class="slds-text-align_center">
+					<h1>
+						No new announcement.
+					</h1>
+				</div>
+			</template>
+        </template>
+        <template if:false={loaded}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

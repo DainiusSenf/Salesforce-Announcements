@@ -1,0 +1,11 @@
+<!--
+ - Created by daini on 19/01/31.
+ -->
+
+<aura:component description="CMP_Add_New_Announcement"
+				controller="CTRL_Announcement"
+				implements="lightning:actionOverride,flexipage:availableForAllPageTypes"
+				access="global">
+
+	<c:announcementOverrideCreateNew/>
+</aura:component>

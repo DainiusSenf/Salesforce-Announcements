@@ -1,0 +1,19 @@
+<template>
+	<div class="slds-modal__content slds-p-around--medium slds-grid slds-wrap ">
+		<lightning-record-view-form
+				record-id={recordId}
+				object-api-name="Announcement__c">
+				<lightning-output-field field-name="Announcement__c"></lightning-output-field>
+				<lightning-output-field field-name="Start_Date__c"></lightning-output-field>
+				<lightning-output-field field-name="End_Date__c"></lightning-output-field>
+				<div class="slds-form-element__label">Profile Group</div>
+				<ul class="slds-list--dotted">
+					<template for:each={profileGroup} for:item="prof">
+						<li class="slds-item" key={prof}>
+							{prof}
+						</li>
+					</template>
+				</ul>
+		</lightning-record-view-form>
+	</div>
+</template>
